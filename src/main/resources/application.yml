@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    generate-ddl: true
+  datasource:
+    initialization-mode: always
+    url: jdbc:mysql://localhost:3306/wotos_vehicles_database?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+env:
+  app_id: "da67d6dbc1f23b9e54688febe7d5da56"
+  urls:
+    world_of_tanks_api: "https://api.worldoftanks.com/wot"
