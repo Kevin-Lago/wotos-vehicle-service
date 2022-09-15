@@ -2,8 +2,6 @@ package com.wotos.wotosvehicleservice.util.model.modules;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.ForeignKey;
-
 public class WotTurret {
 
     private final String name;
