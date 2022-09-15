@@ -19,12 +19,12 @@ public interface WotTankopediaFeignClient {
             @RequestParam(name = "application_id") String appId,
             @RequestParam(name = "fields", required = false) String fields,
             @RequestParam(name = "language", required = false) String language,
-            @RequestParam(name = "limit", required = false) String limit,
-            @RequestParam(name = "nation", required = false) String nation,
+            @RequestParam(name = "limit", required = false) Integer limit,
+            @RequestParam(name = "nation", required = false) String[] nations,
             @RequestParam(name = "page_no", required = false) String page_no,
-            @RequestParam(name = "tank_id", required = false) String tank_id,
-            @RequestParam(name = "tier", required = false) String tier,
-            @RequestParam(name = "type", required = false) String type
+            @RequestParam(name = "tank_id", required = false) Integer[] vehicleIds,
+            @RequestParam(name = "tier", required = false) Integer[] tiers,
+            @RequestParam(name = "type", required = false) String[] types
     );
 
     @GetMapping("/modules/")
