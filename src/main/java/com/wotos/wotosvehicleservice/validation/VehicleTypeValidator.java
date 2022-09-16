@@ -4,7 +4,6 @@ import com.wotos.wotosvehicleservice.validation.constraints.VehicleType;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.util.Arrays;
 import java.util.EnumSet;
 
 public class VehicleTypeValidator implements ConstraintValidator<VehicleType, String[]> {

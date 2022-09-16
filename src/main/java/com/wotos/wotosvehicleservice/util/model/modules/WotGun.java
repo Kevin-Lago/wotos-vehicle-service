@@ -23,7 +23,11 @@ public class WotGun {
     @JsonProperty("aim_time")
     private final Float aimTime;
 
-    public WotGun(Integer moveDownArc, Integer caliber, String name, Integer weight, Integer moveUpArc, Float fireRate, Float dispersion, String tag, Integer traverseSpeed, Float reloadTime, Integer tier, Float aimTime) {
+    public WotGun(
+            Integer moveDownArc, Integer caliber, String name, Integer weight,
+            Integer moveUpArc, Float fireRate, Float dispersion, String tag,
+            Integer traverseSpeed, Float reloadTime, Integer tier, Float aimTime
+    ) {
         this.moveDownArc = moveDownArc;
         this.caliber = caliber;
         this.name = name;

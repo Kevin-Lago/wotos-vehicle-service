@@ -15,7 +15,10 @@ public class WotSuspension {
     @JsonProperty("stearing_lock_angle")
     private final Integer stearingLockAngle;
 
-    public WotSuspension(String name, Integer weight, Integer loadLimit, String tag, Integer traverseSpeed, Integer tier, Integer stearingLockAngle) {
+    public WotSuspension(
+            String name, Integer weight, Integer loadLimit, String tag,
+            Integer traverseSpeed, Integer tier, Integer stearingLockAngle
+    ) {
         this.name = name;
         this.weight = weight;
         this.loadLimit = loadLimit;
