@@ -1,7 +1,6 @@
 package com.wotos.wotosvehicleservice.validation.constraints;
 
 
-import com.wotos.wotosvehicleservice.validation.LanguageValidator;
 import com.wotos.wotosvehicleservice.validation.VehicleTypeValidator;
 
 import javax.validation.Constraint;

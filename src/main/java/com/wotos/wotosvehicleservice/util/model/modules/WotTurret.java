@@ -18,7 +18,11 @@ public class WotTurret {
     @JsonProperty("traverse_left_arc")
     private final Integer traverseLeftArc;
 
-    public WotTurret(String name, Integer weight, Integer viewRange, Integer hp, String tag, String traverseSpeed, Integer traverseRightArc, Integer tier, Integer traverseLeftArc) {
+    public WotTurret(
+            String name, Integer weight, Integer viewRange, Integer hp,
+            String tag, String traverseSpeed, Integer traverseRightArc,
+            Integer tier, Integer traverseLeftArc
+    ) {
         this.name = name;
         this.weight = weight;
         this.viewRange = viewRange;

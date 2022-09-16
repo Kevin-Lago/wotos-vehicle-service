@@ -11,7 +11,9 @@ public class WotRadio {
     private final String name;
     private final Integer weight;
 
-    public WotRadio(Integer tier, Integer signalRange, String tag, String name, Integer weight) {
+    public WotRadio(
+            Integer tier, Integer signalRange, String tag, String name, Integer weight
+    ) {
         this.tier = tier;
         this.signalRange = signalRange;
         this.tag = tag;

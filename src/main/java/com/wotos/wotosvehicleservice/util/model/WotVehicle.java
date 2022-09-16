@@ -46,7 +46,17 @@ public class WotVehicle {
     private final Map<String, Object> defaultProfile;
     private final Integer[] turrets;
 
-    public WotVehicle(Boolean isWheeled, Integer[] radios, Boolean isPremium, String tag, Map<String, String> images, Integer tankId, Integer[] suspensions, Integer[] provisions, Integer[] engines, Object[] crew, String type, Integer[] guns, Object multination, String description, String shortName, Boolean isPremiumIgr, Map<String, Integer> nextTanks, Map<String, WotVehicleModule> modulesTree, String nation, Integer tier, Map<String, Integer> pricesXp, Boolean isGift, String name, Integer priceGold, Integer priceCredit, Map<String, Object> defaultProfile, Integer[] turrets) {
+    public WotVehicle(
+            Boolean isWheeled, Integer[] radios, Boolean isPremium, String tag,
+            Map<String, String> images, Integer tankId, Integer[] suspensions,
+            Integer[] provisions, Integer[] engines, Object[] crew, String type,
+            Integer[] guns, Object multination, String description, String shortName,
+            Boolean isPremiumIgr, Map<String, Integer> nextTanks,
+            Map<String, WotVehicleModule> modulesTree, String nation, Integer tier,
+            Map<String, Integer> pricesXp, Boolean isGift, String name,
+            Integer priceGold, Integer priceCredit, Map<String, Object> defaultProfile,
+            Integer[] turrets
+    ) {
         this.isWheeled = isWheeled;
         this.radios = radios;
         this.isPremium = isPremium;
