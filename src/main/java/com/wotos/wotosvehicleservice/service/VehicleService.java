@@ -12,10 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Service
 public class VehicleService {
@@ -32,32 +29,27 @@ public class VehicleService {
 
     }
 
-    public String get() {
-        return "got";
+    public Map<Integer, WotVehicle> getVehicles(String language, Integer limit, String[] nations, Integer pageNumber, Integer[] vehicleIds, Integer[] vehicleTiers, String[] vehicleTypes) {
+        String[] fields = {};
+        Map<Integer, WotVehicle> wotVehicles = fetchWotVehicles(fields, language, limit, nations, pageNumber, vehicleIds, vehicleTiers, vehicleTypes);
+
+        return wotVehicles;
     }
 
-//    public List<WotVehicle> getVehicles(List<Integer> vehicleIds) {
-//
-//    }
-
-    private List<WotVehicle> fetchWotVehicles(
-            String fields, String language, Integer limit,
-            List<String> nations, String pageNumber,
-            List<Integer> vehicleIds, List<Integer> vehicleTiers,
-            List<String> vehicleTypes
+    private Map<Integer, WotVehicle> fetchWotVehicles(
+            String[] fields, String language, Integer limit,
+            String[] nations, Integer pageNumber,
+            Integer[] vehicleIds, Integer[] vehicleTiers,
+            String[] vehicleTypes
     ) {
-        return null;
-//        Integer[] array = new Integer[vehicleIds.size()];
-//        vehicleIds.toArray(array);
-//
-//        try {
-//            return Objects.requireNonNull(
-//                    wotTankopediaFeignClient.getVehicles(APP_ID, accountId, accessToken, extra, fields, inGarage, language, array).getBody()
-//            ).getData().get(accountId);
-//        } catch (NullPointerException e) {
-//            System.out.println("Couldn't fetch WotVehicleStatistics with accountId: " + accountId + " and vehicleIds: " + vehicleIds.toString() + "\n" + e.getStackTrace());
-//            return new ArrayList<>();
-//        }
+        try {
+            return Objects.requireNonNull(
+                    wotTankopediaFeignClient.getVehicles(APP_ID, fields, language, limit, nations, pageNumber, vehicleIds, vehicleTiers, vehicleTypes).getBody()
+            ).getData();
+        } catch (NullPointerException e) {
+            System.out.println("Couldn't fetch WotVehicles" + "\n" + e.getStackTrace());
+            return new HashMap<>();
+        }
     }
 
 }

@@ -2,6 +2,7 @@ package com.wotos.wotosvehicleservice.util.feign;
 
 import com.wotos.wotosvehicleservice.util.model.WotVehicle;
 import com.wotos.wotosvehicleservice.util.model.WotApiResponse;
+import com.wotos.wotosvehicleservice.validation.constraints.Language;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,27 +18,27 @@ public interface WotTankopediaFeignClient {
     @GetMapping("/vehicles/")
     ResponseEntity<WotApiResponse<Map<Integer, WotVehicle>>> getVehicles(
             @RequestParam(name = "application_id") String appId,
-            @RequestParam(name = "fields", required = false) String fields,
-            @RequestParam(name = "language", required = false) String language,
+            @RequestParam(name = "fields", required = false) String[] fields,
+            @RequestParam(name = "language", required = false, defaultValue = "en") @Language String language,
             @RequestParam(name = "limit", required = false) Integer limit,
             @RequestParam(name = "nation", required = false) String[] nations,
-            @RequestParam(name = "page_no", required = false) String page_no,
+            @RequestParam(name = "page_no", required = false) Integer pageNumber,
             @RequestParam(name = "tank_id", required = false) Integer[] vehicleIds,
             @RequestParam(name = "tier", required = false) Integer[] tiers,
             @RequestParam(name = "type", required = false) String[] types
     );
 
     @GetMapping("/modules/")
-    ResponseEntity<?> getModules(
+    ResponseEntity<WotApiResponse<?>> getModules(
             @RequestParam(name = "application_id") String appId,
-            @RequestParam(name = "extra") String extra,
-            @RequestParam(name = "fields") String fields,
-            @RequestParam(name = "language") String language,
-            @RequestParam(name = "limit") String limit,
-            @RequestParam(name = "module_id") String moduleId,
-            @RequestParam(name = "nation") String nation,
-            @RequestParam(name = "page_no") String pageNumber,
-            @RequestParam(name = "type") String type
+            @RequestParam(name = "extra", required = false) String[] extra,
+            @RequestParam(name = "fields", required = false) String[] fields,
+            @RequestParam(name = "language", required = false, defaultValue = "en") @Language String language,
+            @RequestParam(name = "limit", required = false) Integer limit,
+            @RequestParam(name = "module_id", required = false) Integer[] moduleId,
+            @RequestParam(name = "nation", required = false) String[] nations,
+            @RequestParam(name = "page_no", required = false) Integer pageNumber,
+            @RequestParam(name = "type", required = false) String[] type
     );
 
 }
