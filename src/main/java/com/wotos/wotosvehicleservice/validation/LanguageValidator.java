@@ -39,6 +39,8 @@ public class LanguageValidator implements ConstraintValidator<Language, String> 
         if (language != null) {
             return true;
         }
+
+        constraintValidatorContext.buildConstraintViolationWithTemplate("Language Code: " + code + " is invalid").addConstraintViolation();
         return false;
     }
 }
